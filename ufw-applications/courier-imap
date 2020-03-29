@@ -1,0 +1,20 @@
+[Courier POP3]
+title=POP3
+description=Courier mail server
+ports=110/tcp
+
+[Courier POP3 SSL]
+title=POP3 (SSL)
+description=Courier mail server
+ports=995/tcp
+
+[Courier IMAP]
+title=IMAP
+description=Courier mail server
+ports=143/tcp
+
+[Courier IMAP SSL]
+title=IMAP (SSL)
+description=Courier mail server
+ports=993/tcp
+

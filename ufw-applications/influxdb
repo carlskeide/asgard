@@ -1,0 +1,10 @@
+[InfluxDB HTTP]
+title=InfluxDB HTTP
+description=Open-source time series database
+ports=8086/tcp
+
+[InfluxDB RPC]
+title=InfluxDB RPC
+description=Open-source time series database
+ports=8089/tcp
+
