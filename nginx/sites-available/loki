@@ -1,0 +1,32 @@
+server {
+    listen 80;
+    server_name loki.skeide.se loki;
+
+    include snippets/acme.conf;
+    include snippets/health.conf;
+
+    location / {
+        return 302 https://loki.skeide.se$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name loki.skeide.se;
+
+    ssl on;
+    ssl_certificate     /etc/letsencrypt/live/loki.skeide.se/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/loki.skeide.se/privkey.pem;
+
+    access_log /var/log/nginx/loki_access.log;
+    error_log  /var/log/nginx/loki_error.log info;
+
+    root /var/www/loki;
+    index index.html;
+
+    include snippets/health.conf;
+
+    location = / {
+        return 418;
+    }
+}
