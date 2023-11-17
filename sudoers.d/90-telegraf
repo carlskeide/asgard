@@ -1,0 +1,4 @@
+# Telegraf smart, fail2ban plugins
+Cmnd_Alias TELEGRAF = /usr/sbin/smartctl, /usr/bin/fail2ban-client status, /usr/bin/fail2ban-client status *
+telegraf  ALL=(root) NOEXEC: NOPASSWD: TELEGRAF
+Defaults!TELEGRAF !logfile, !syslog, !pam_session
